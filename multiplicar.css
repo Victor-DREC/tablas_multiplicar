@@ -1,0 +1,300 @@
+/* ============================================
+   estilos.css  —  Tabla del 3
+   Guarda este archivo con el nombre: estilos.css
+   en la misma carpeta que index.html
+   ============================================ */
+
+/* ---------- Variables ---------- */
+:root {
+  --clr-bg:        #fdf6ec;
+  --clr-surface:   #ffffff;
+  --clr-primary:   #c0392b;
+  --clr-primary-d: #96281b;
+  --clr-accent:    #f39c12;
+  --clr-dark:      #1a1a2e;
+  --clr-mid:       #555566;
+  --clr-border:    #e8dcc8;
+  --clr-row-alt:   #fdf0e0;
+  --clr-result:    #c0392b;
+
+  --ff-display: 'Bebas Neue', sans-serif;
+  --ff-mono:    'DM Mono', monospace;
+
+  --radius:  12px;
+  --shadow:  0 8px 32px rgba(26,26,46,0.12);
+  --trans:   0.25s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-dark);
+  font-family: var(--ff-mono);
+  min-height: 100vh;
+  /* Subtle dot-grid texture (CSS only) */
+  background-image:
+    radial-gradient(circle, #c0392b22 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ---------- Page Wrapper ---------- */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 3rem;
+  gap: 2rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem 2rem 1.6rem;
+  background: var(--clr-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Decorative diagonal stripe */
+.header-decoration {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  background: var(--clr-accent);
+  transform: rotate(30deg);
+  opacity: 0.18;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* ---------- Title ---------- */
+.site-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  gap: 0.1rem;
+}
+
+.title-x3 {
+  font-family: var(--ff-display);
+  font-size: clamp(4rem, 14vw, 7rem);
+  color: var(--clr-accent);
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  animation: fadeSlideDown 0.6s ease both;
+}
+
+.title-main {
+  font-family: var(--ff-display);
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  color: var(--clr-surface);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  animation: fadeSlideDown 0.7s 0.1s ease both;
+}
+
+/* ---------- Button PROBAR ---------- */
+.btn-probar {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  color: var(--clr-dark);
+  background: var(--clr-accent);
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 2.8rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px var(--clr-primary);
+  transition: transform var(--trans), box-shadow var(--trans);
+  animation: fadeSlideDown 0.8s 0.2s ease both;
+}
+
+.btn-probar:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--clr-primary);
+}
+
+.btn-probar:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--clr-primary);
+}
+
+/* ---------- Main Content ---------- */
+.main-content {
+  width: 100%;
+  max-width: 560px;
+  animation: fadeSlideUp 0.7s 0.3s ease both;
+}
+
+/* ---------- Table Card ---------- */
+.table-card {
+  background: var(--clr-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 2px solid var(--clr-border);
+}
+
+/* ---------- Rows ---------- */
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  align-items: center;
+  padding: 0.75rem 1.4rem;
+  border-bottom: 1px solid var(--clr-border);
+  transition: background var(--trans);
+}
+
+.table-row:nth-child(even) {
+  background: var(--clr-row-alt);
+}
+
+.table-row:hover {
+  background: #fdebd0;
+}
+
+.table-row.header-row {
+  background: var(--clr-primary);
+  color: #ffffff;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.4rem;
+  cursor: default;
+}
+
+.table-row.header-row:hover {
+  background: var(--clr-primary);
+}
+
+.table-row.row-last {
+  border-bottom: none;
+}
+
+/* ---------- Cells ---------- */
+.cell {
+  font-family: var(--ff-mono);
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  text-align: center;
+}
+
+.cell-factor {
+  text-align: left;
+  font-weight: 500;
+  color: var(--clr-mid);
+}
+
+.cell-op {
+  color: var(--clr-accent);
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.cell-base {
+  color: var(--clr-dark);
+  font-weight: 500;
+}
+
+.cell-eq {
+  color: var(--clr-mid);
+}
+
+.cell-result {
+  text-align: right;
+  font-family: var(--ff-display);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--clr-result);
+  letter-spacing: 0.05em;
+}
+
+/* Override header cells */
+.header-row .cell,
+.header-row .cell-factor,
+.header-row .cell-op,
+.header-row .cell-base,
+.header-row .cell-eq,
+.header-row .cell-result {
+  color: #ffffff;
+  font-size: 0.72rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  font-size: 0.75rem;
+  color: var(--clr-mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 400px) {
+  .site-header {
+    padding: 1.5rem 1rem 1.2rem;
+  }
+
+  .table-row {
+    padding: 0.65rem 0.9rem;
+    grid-template-columns: 1.5fr 0.8fr 0.8fr 0.8fr 1.8fr;
+  }
+
+  .btn-probar {
+    font-size: 1.1rem;
+    padding: 0.6rem 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-wrapper {
+    padding: 3rem 2rem 4rem;
+  }
+
+  .table-row {
+    padding: 0.9rem 2rem;
+  }
+}
