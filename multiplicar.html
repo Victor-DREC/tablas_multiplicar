@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tabla de Multiplicar — STEAMNOVA Edition</title>
+  <title>Generador de Tablas — STEAMNOVA</title>
   <link rel="stylesheet" href="multiplicar.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,69 +17,55 @@
   <div class="page-wrapper">
 
     <header class="site-header">
-      <div class="corner tl" aria-hidden="true"></div>
-      <div class="corner tr" aria-hidden="true"></div>
-      <div class="corner bl" aria-hidden="true"></div>
-      <div class="corner br" aria-hidden="true"></div>
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
 
       <div class="site-title">
-        <span class="title-x3" id="display-factor">X5</span>
-        <span class="title-main">TABLA DE MULTIPLICAR</span>
-        <span class="title-sub">STEAMNOVA_ACADEMY</span>
+        <span class="title-x3" id="display-factor">--</span>
+        <span class="title-main">TABLA DINÁMICA</span>
+        <span class="title-sub">SISTEMA_DE_APRENDIZAJE_STEAMNOVA</span>
+      </div>
+
+      <div class="user-guide">
+        <p class="guide-text"><span class="cursor">></span> INGRESE EL NÚMERO QUE DESEA PRACTICAR:</p>
       </div>
 
       <div class="input-section">
         <div class="input-wrapper">
-          <label for="numero-base" class="input-label">INGRESAR_PARAMETRO:</label>
-          <input type="number" id="numero-base" class="cyber-input" value="5" min="1" max="99">
+          <input type="number" id="numero-base" class="cyber-input" placeholder="00" min="1" max="99">
+          <span class="input-hint">RANGO RECOMENDADO: 1 A 99</span>
         </div>
       </div>
 
-      <button class="btn-probar" type="button" onclick="generarTablas()">PROBAR</button>
-
-      <div class="status-bar">
-        <span class="status-dot" aria-hidden="true"></span>
-        SISTEMA ACTIVO
-        <span class="status-sep" aria-hidden="true">|</span>
-        BASE_DINAMICA
-      </div>
+      <button class="btn-probar" type="button" onclick="generarTablas()">
+        GENERAR SECUENCIA [ENTER]
+      </button>
     </header>
 
     <div class="stats-strip">
       <div class="stat-card stat-cyan">
-        <span class="stat-label">MINIMO</span>
-        <span class="stat-value" id="stat-min">05</span>
+        <span class="stat-label">INICIO</span>
+        <span class="stat-value" id="stat-min">00</span>
       </div>
       <div class="stat-card stat-blue">
-        <span class="stat-label">MAXIMO</span>
-        <span class="stat-value" id="stat-max">50</span>
+        <span class="stat-label">LÍMITE</span>
+        <span class="stat-value" id="stat-max">00</span>
       </div>
       <div class="stat-card stat-pink">
         <span class="stat-label">FACTOR</span>
-        <span class="stat-value" id="stat-factor">x5</span>
-      </div>
-      <div class="stat-card stat-green">
-        <span class="stat-label">ESTADO</span>
-        <span class="stat-value">OK</span>
+        <span class="stat-value" id="stat-factor">x0</span>
       </div>
     </div>
 
     <main class="main-content" id="tabla-container">
-      <div class="table-card">
-        <div class="table-row header-row">
-          <span class="cell cell-factor">N</span>
-          <span class="cell cell-op">OP</span>
-          <span class="cell cell-base">BASE</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">RESULT</span>
-        </div>
-        </div>
+      <div class="system-message">
+        <p>ESPERANDO ENTRADA DE DATOS PARA INICIALIZAR...</p>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <span>&copy; VICTOR PILACHANGA 2026</span>
+      <span>&copy; VICTOR PILACHANGA | STEAMNOVA ACADEMY</span>
     </footer>
-
   </div>
 
   <script src="multiplicar.js"></script>

@@ -1,19 +1,21 @@
 
 function generarTablas() {
-    let contenedor = document.getElementById("tabla-container");
-    let inputBase = document.getElementById("numero-base");
-    let factorDisplay = document.getElementById("display-factor");
-    
-    let base = parseInt(inputBase.value);
+    const inputBase = document.getElementById("numero-base");
+    const contenedor = document.getElementById("tabla-container");
+    const displayFactor = document.getElementById("display-factor");
+    const valBase = inputBase.value;
 
-    if (isNaN(base)) {
-        alert("Por favor, ingresa un parámetro numérico válido.");
+    if (valBase === "" || valBase < 0) {
+        alert("SISTEMA: Por favor, ingrese un número válido mayor a 0.");
+        inputBase.focus();
         return;
     }
 
-    let contenido = "";
+    const base = parseInt(valBase);
 
-    factorDisplay.innerText = "X" + base;
+    displayFactor.innerText = "X" + base;
+
+    let contenido = "";
 
     contenido += `
       <div class="table-card">
@@ -44,13 +46,13 @@ function generarTablas() {
 
     contenedor.innerHTML = contenido;
 
-    if(document.getElementById("stat-max")) {
-        document.getElementById("stat-max").innerText = (base * 10).toString().padStart(2, '0');
-    }
-    if(document.getElementById("stat-factor")) {
-        document.getElementById("stat-factor").innerText = "x" + base;
-    }
-    if(document.getElementById("stat-min")) {
-        document.getElementById("stat-min").innerText = base.toString().padStart(2, '0');
-    }
+    document.getElementById("stat-min").innerText = base.toString().padStart(2, '0');
+    document.getElementById("stat-max").innerText = (base * 10).toString().padStart(2, '0');
+    document.getElementById("stat-factor").innerText = "x" + base;
 }
+
+document.getElementById("numero-base")?.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        generarTablas();
+    }
+});

@@ -579,3 +579,79 @@ body {
 #display-factor {
     transition: all 0.5s ease;
 }
+
+/* ... (Se asume que conservas tus variables :root anteriores) ... */
+
+/* Estilos de Guía y Usuario */
+.user-guide {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.guide-text {
+  font-family: var(--ff-mono);
+  color: var(--clr-cyan);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Estilos de Entrada de Datos */
+.input-section {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cyber-input {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-cyan);
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  padding: 0.6rem;
+  width: 140px;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.cyber-input:focus {
+  border-color: var(--clr-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.input-hint {
+  font-family: var(--ff-mono);
+  font-size: 0.65rem;
+  color: var(--clr-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+/* Mensaje del Sistema */
+.system-message {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--clr-border);
+  color: var(--clr-muted);
+  font-family: var(--ff-mono);
+  text-align: center;
+}
+
+/* ... (El resto de tus estilos de table-card, row, cell, etc.) ... */
