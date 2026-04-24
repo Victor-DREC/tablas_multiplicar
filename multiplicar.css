@@ -526,3 +526,56 @@ body {
     padding: 0.9rem 2rem;
   }
 }
+
+/* ... (Mantener todo tu CSS anterior y agregar lo siguiente) ... */
+
+.input-section {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-label {
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  color: var(--clr-cyan);
+  letter-spacing: 0.2em;
+}
+
+.cyber-input {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-cyan);
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  width: 120px;
+  border-radius: var(--radius);
+  outline: none;
+  text-align: center;
+  transition: all var(--trans);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.cyber-input:focus {
+  border-color: var(--clr-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Eliminar flechas del input number */
+.cyber-input::-webkit-inner-spin-button,
+.cyber-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Estilo para que el título grande cambie dinámicamente */
+#display-factor {
+    transition: all 0.5s ease;
+}

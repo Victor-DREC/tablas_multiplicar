@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tabla del 3 — Tech Edition</title>
+  <title>Tabla de Multiplicar — STEAMNOVA Edition</title>
   <link rel="stylesheet" href="multiplicar.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
-  <main class="main-content" id="tabla-container">
-    </main>
-
-<script src="multiplicar.js"></script>
 </head>
 <body>
 
-  <!-- Grid Background -->
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="scanlines" aria-hidden="true"></div>
 
   <div class="page-wrapper">
 
-    <!-- HEADER -->
     <header class="site-header">
       <div class="corner tl" aria-hidden="true"></div>
       <div class="corner tr" aria-hidden="true"></div>
       <div class="corner bl" aria-hidden="true"></div>
       <div class="corner br" aria-hidden="true"></div>
 
-
       <div class="site-title">
-        <span class="title-x3">X3</span>
-        <span class="title-main">TABLA DEL TRES</span>
-        <span class="title-sub">MULTIPLICACION_BASICA</span>
+        <span class="title-x3" id="display-factor">X5</span>
+        <span class="title-main">TABLA DE MULTIPLICAR</span>
+        <span class="title-sub">STEAMNOVA_ACADEMY</span>
+      </div>
+
+      <div class="input-section">
+        <div class="input-wrapper">
+          <label for="numero-base" class="input-label">INGRESAR_PARAMETRO:</label>
+          <input type="number" id="numero-base" class="cyber-input" value="5" min="1" max="99">
+        </div>
       </div>
 
       <button class="btn-probar" type="button" onclick="generarTablas()">PROBAR</button>
@@ -41,36 +41,31 @@
         <span class="status-dot" aria-hidden="true"></span>
         SISTEMA ACTIVO
         <span class="status-sep" aria-hidden="true">|</span>
-        FILAS: 10
-        <span class="status-sep" aria-hidden="true">|</span>
-        BASE: 3
+        BASE_DINAMICA
       </div>
     </header>
 
-    <!-- STATS -->
     <div class="stats-strip">
       <div class="stat-card stat-cyan">
         <span class="stat-label">MINIMO</span>
-        <span class="stat-value">03</span>
+        <span class="stat-value" id="stat-min">05</span>
       </div>
       <div class="stat-card stat-blue">
         <span class="stat-label">MAXIMO</span>
-        <span class="stat-value">30</span>
+        <span class="stat-value" id="stat-max">50</span>
       </div>
       <div class="stat-card stat-pink">
         <span class="stat-label">FACTOR</span>
-        <span class="stat-value">x3</span>
+        <span class="stat-value" id="stat-factor">x5</span>
       </div>
       <div class="stat-card stat-green">
-        <span class="stat-label">TOTAL</span>
-        <span class="stat-value">165</span>
+        <span class="stat-label">ESTADO</span>
+        <span class="stat-value">OK</span>
       </div>
     </div>
 
-    <!-- TABLE -->
-    <main class="main-content">
+    <main class="main-content" id="tabla-container">
       <div class="table-card">
-
         <div class="table-row header-row">
           <span class="cell cell-factor">N</span>
           <span class="cell cell-op">OP</span>
@@ -78,95 +73,15 @@
           <span class="cell cell-eq">=</span>
           <span class="cell cell-result">RESULT</span>
         </div>
-
-        <div class="table-row" style="--i:1">
-          <span class="cell cell-factor">01</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">03</span>
         </div>
-
-        <div class="table-row" style="--i:2">
-          <span class="cell cell-factor">02</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">06</span>
-        </div>
-
-        <div class="table-row" style="--i:3">
-          <span class="cell cell-factor">03</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">09</span>
-        </div>
-
-        <div class="table-row" style="--i:4">
-          <span class="cell cell-factor">04</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">12</span>
-        </div>
-
-        <div class="table-row" style="--i:5">
-          <span class="cell cell-factor">05</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">15</span>
-        </div>
-
-        <div class="table-row" style="--i:6">
-          <span class="cell cell-factor">06</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">18</span>
-        </div>
-
-        <div class="table-row" style="--i:7">
-          <span class="cell cell-factor">07</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">21</span>
-        </div>
-
-        <div class="table-row" style="--i:8">
-          <span class="cell cell-factor">08</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">24</span>
-        </div>
-
-        <div class="table-row" style="--i:9">
-          <span class="cell cell-factor">09</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result">27</span>
-        </div>
-
-        <div class="table-row row-last" style="--i:10">
-          <span class="cell cell-factor">10</span>
-          <span class="cell cell-op">x</span>
-          <span class="cell cell-base">3</span>
-          <span class="cell cell-eq">=</span>
-          <span class="cell cell-result neon-pink">30</span>
-        </div>
-
-      </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
       <span>&copy; VICTOR PILACHANGA 2026</span>
     </footer>
 
   </div>
+
+  <script src="multiplicar.js"></script>
 </body>
 </html>
